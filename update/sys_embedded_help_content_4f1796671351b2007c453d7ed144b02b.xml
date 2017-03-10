@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_embedded_help_content">
+    <sys_embedded_help_content action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <content/>
+        <last_sync>2017-03-10 17:20:06</last_sync>
+        <modifier>normal</modifier>
+        <name>sys_data_source-normal</name>
+        <page>sys_data_source</page>
+        <product>1</product>
+        <qualifier/>
+        <snc_created>true</snc_created>
+        <sys_class_name>sys_embedded_help_content</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2017-03-10 17:20:06</sys_created_on>
+        <sys_id>4f1796671351b2007c453d7ed144b02b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>sys_data_source-normal</sys_name>
+        <sys_package display_value="HMAC Encoding" source="x_hmac_encoding">bce6066f1311b2007c453d7ed144b0f8</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="HMAC Encoding">bce6066f1311b2007c453d7ed144b0f8</sys_scope>
+        <sys_update_name>sys_embedded_help_content_4f1796671351b2007c453d7ed144b02b</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2017-03-10 17:20:06</sys_updated_on>
+        <version>j</version>
+    </sys_embedded_help_content>
+    <sys_translated_text action="delete_multiple" query="documentkey=4f1796671351b2007c453d7ed144b02b"/>
+</record_update>
