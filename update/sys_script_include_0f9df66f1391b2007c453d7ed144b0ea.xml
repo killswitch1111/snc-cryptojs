@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <record_update table="sys_script_include">
     <sys_script_include action="INSERT_OR_UPDATE">
-        <access>package_private</access>
+        <access>public</access>
         <active>true</active>
         <api_name>x_hmac_encoding.TestCryptoJS</api_name>
         <client_callable>false</client_callable>
@@ -20,6 +20,36 @@ TestCryptoJS.prototype = {
 		var encrypted2 = CryptoJS.HmacSHA1(message, secret);
 		gs.info(gs.base64Encode(encrypted2));	
 	},
+	
+	runTest2: function(key, data){
+		
+		var encrypted = CryptoJS.HmacSHA1(data, key);
+		gs.info(this.convertToBase64(encrypted));
+	
+	},
+	
+	convertToBase64: function(myHexString){
+		var hexArray = myHexString.toString()
+		.replace(/\r|\n/g, "")
+		.replace(/([\da-fA-F]{2}) ?/g, "0x$1 ")
+		.replace(/ +$/, "")
+		.split(" ");
+		var byteString = String.fromCharCode.apply(null, hexArray);
+		var base64string = this.btoa(byteString);
+		return base64string;
+	},
+	btoa : function (bin) {
+		var tableStr = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
+  var table = tableStr.split("");
+    for (var i = 0, j = 0, len = bin.length / 3, base64 = []; i < len; ++i) {
+      var a = bin.charCodeAt(j++), b = bin.charCodeAt(j++), c = bin.charCodeAt(j++);
+      if ((a | b | c) > 255) throw new Error("String contains an invalid character");
+      base64[base64.length] = table[a >> 2] + table[((a << 4) & 63) | (b >> 4)] +
+                              (isNaN(b) ? "=" : table[((b << 2) & 63) | (c >> 6)]) +
+                              (isNaN(b + c) ? "=" : table[c & 63]);
+    }
+    return base64.join("");
+  },
 
     type: 'TestCryptoJS'
 };]]></script>
@@ -27,13 +57,13 @@ TestCryptoJS.prototype = {
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2017-03-10 20:08:51</sys_created_on>
         <sys_id>0f9df66f1391b2007c453d7ed144b0ea</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>6</sys_mod_count>
         <sys_name>TestCryptoJS</sys_name>
         <sys_package display_value="HMAC Encoding" source="x_hmac_encoding">bce6066f1311b2007c453d7ed144b0f8</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="HMAC Encoding">bce6066f1311b2007c453d7ed144b0f8</sys_scope>
         <sys_update_name>sys_script_include_0f9df66f1391b2007c453d7ed144b0ea</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2017-03-10 20:08:51</sys_updated_on>
+        <sys_updated_on>2017-03-10 21:24:25</sys_updated_on>
     </sys_script_include>
 </record_update>
