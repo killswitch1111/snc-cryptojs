@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_hmac_encoding.TestCryptoJS</api_name>
+        <client_callable>false</client_callable>
+        <description/>
+        <name>TestCryptoJS</name>
+        <script><![CDATA[var TestCryptoJS = Class.create();
+TestCryptoJS.prototype = {
+    initialize: function() {
+    },
+	
+	runTest: function(){
+		var message = 'message';
+		var secret = 'secret';
+		var encrypted = CryptoJS.HmacSHA1(message, secret);
+		gs.info(gs.base64Encode(encrypted));
+		var encrypted2 = CryptoJS.HmacSHA1(message, secret);
+		gs.info(gs.base64Encode(encrypted2));	
+	},
+
+    type: 'TestCryptoJS'
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2017-03-10 20:08:51</sys_created_on>
+        <sys_id>0f9df66f1391b2007c453d7ed144b0ea</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>TestCryptoJS</sys_name>
+        <sys_package display_value="HMAC Encoding" source="x_hmac_encoding">bce6066f1311b2007c453d7ed144b0f8</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="HMAC Encoding">bce6066f1311b2007c453d7ed144b0f8</sys_scope>
+        <sys_update_name>sys_script_include_0f9df66f1391b2007c453d7ed144b0ea</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2017-03-10 20:08:51</sys_updated_on>
+    </sys_script_include>
+</record_update>
